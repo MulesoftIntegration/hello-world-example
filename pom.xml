@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<app.runtime>4.4.0</app.runtime>
-		<mule.maven.plugin.version>4.0.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -20,7 +20,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>3..0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
@@ -29,14 +29,25 @@
 				<extensions>true</extensions>
 				<configuration>
 				<cloudHubDeployment>
-						<muleVersion>4.5.1</muleVersion>
+						<muleVersion>4.4.0</muleVersion>
+						<environment>dev</environment>
 						<region>US-West-GovCloud</region>
-						<username>${cloudhub.user}</username>
-						<password>${cloudhub.password}</password>
-						<applicationName>hello-world-gitactions</applicationName> // to change dev to d after deploying to cloudhub
+						<businessGroupId>370f98c6-349c-45fb-8002-9d03c71c0f19</businessGroupId>
+					 	<connectedAppClientId>e40f6c3bde11411d9d8a6ba4077a19b3</connectedAppClientId>
+					 	<connectedAppClientSecret>21EF58206B584EC9905f4889CB85b474</connectedAppClientSecret>
+                 				<applicationName>hello-world-gitactions</applicationName>
 						<environment>dev</environment>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
+						<properties>
+				                    <anypoint.platform.client_id>7deab2029a124574bb3202392a3f7ba5</anypoint.platform.client_id>
+				                    <anypoint.platform.client_secret>7E22c0055bc34A6Fba9051057f288fc7</anypoint.platform.client_secret>
+				                  </properties>
+						<deploymentSettings>
+				                        <lastMileSecurity>false</lastMileSecurity>
+				                        <forwardSslSession>false</forwardSslSession>
+				                        <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+				                    </deploymentSettings>
 				</cloudHubDeployment>
 				</configuration>
 			</plugin>
