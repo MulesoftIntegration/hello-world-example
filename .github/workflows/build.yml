@@ -62,7 +62,7 @@ jobs:
         pwd
         ls -ltr
         artifactName=$(ls *.jar | head -1)
-        mvn clean deploy -X -DmuleDeploy -Dmule.env=dev -Danypoint.platform.client_id=e40f6c3bde11411d9d8a6ba4077a19b3 -Danypoint.platform.client_secret=21EF58206B584EC9905f4889CB85b474 -DprojectGroupId=370f98c6-349c-45fb-8002-9d03c71c0f19 -DskipMunitTests
+        mvn clean deploy -X -DmuleDeploy
          -Dmule.artifact=$artifactName \
          -Danypoint.username="$USERNAME" \
          -Danypoint.password="$PASSWORD" \
