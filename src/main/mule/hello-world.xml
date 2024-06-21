@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="hello-worldFlow" doc:id="a6ca1fac-b98a-4519-89db-ccc60e40ccbc" >
+		<scheduler doc:name="Scheduler" doc:id="d22b2b7d-5d0b-483a-b2af-56af48e20fcf" >
+			<scheduling-strategy >
+				<fixed-frequency />
+			</scheduling-strategy>
+		</scheduler>
+		<ee:transform doc:name="Transform Message" doc:id="c8f9b3e4-425c-4c5a-9101-a35a0f280489" >
+			<ee:message >
+				<ee:set-payload ><![CDATA["Hello World"]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="4d89bb60-3f1b-429c-a3af-9bbeb33aa640" message="#[payload]"/>
+	</flow>
+</mule>
