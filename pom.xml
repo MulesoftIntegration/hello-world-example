@@ -44,6 +44,22 @@
 				                    <anypoint.platform.client_secret>7E22c0055bc34A6Fba9051057f288fc7</anypoint.platform.client_secret>
 				                  </properties>
 				</cloudHubDeployment>
+				<cloudHubDeployment>
+						<uri>https://gov.anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<connectedAppClientId>e40f6c3bde11411d9d8a6ba4077a19b3</connectedAppClientId>
+						<connectedAppClientSecret>21EF58206B584EC9905f4889CB85b474</connectedAppClientSecret>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<applicationName>hello-world-gitactions</applicationName>
+						<environment>dev</environment>
+						<workerType>MICRO</workerType>
+						<region>us-east-2</region>
+						<workers>1</workers>
+						<objectStoreV2>true</objectStoreV2>
+						<properties>
+							<secure.key>${decryption.key}</secure.key>
+						</properties>
+					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
